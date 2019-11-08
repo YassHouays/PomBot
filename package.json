@@ -1,5 +1,5 @@
 {
-  "name": "PomBot",
+  "name": "usainbot",
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mikheull/PomBot.git"
+    "url": "git+https://github.com/Mikheull/UsainBot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mikheull/PomBot/issues"
+    "url": "https://github.com/Mikheull/UsainBot/issues"
   },
-  "homepage": "https://github.com/Mikheull/PomBot#readme",
+  "homepage": "https://github.com/Mikheull/UsainBot#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "babel-loader": "^8.0.6",
@@ -36,5 +36,8 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "ejs-webpack-loader": "^2.2.2"
   }
 }
