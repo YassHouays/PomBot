@@ -5,7 +5,7 @@ $color2: blue;
     text-align: right;
     color: $color;
 }
-
+ 
 #app{
     > h1 {
         @include test($color)
@@ -52,22 +52,22 @@ img{ max-width:100%;}
 }
 .srch_bar .input-group-addon { margin: 0 0 0 -27px;}
 
-.chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib h5 span{ font-size:13px; float:right;}
-.chat_ib p{ font-size:14px; color:#989898; margin:auto}
-.chat_img {
+.bot_text h5{ font-size:15px; color:white; margin:0 0 8px 0;}
+.bot_text h5 span{ font-size:13px; float:right;}
+.bot_text p{ font-size:14px; color:#989898; margin:auto}
+.bot_img {
   float: left;
   width: 15%;
 }
-.chat_ib {
+.bot_text {
   float: left;
   padding: 0 0 0 15px;
   width: 85%;
 }
 
-.chat_people{ overflow:hidden; clear:both;}
-.chat_list {
-  border-bottom: 1px solid #c4c4c4;
+.bot_info{ overflow:hidden; clear:both;}
+.bot_list {
+  border-bottom: 1px solid #707070;
   margin: 0;
   padding: 18px 16px 10px;
 }
@@ -162,6 +162,7 @@ img{ max-width:100%;}
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
+  color:white;
 }
 
 #sidebar-wrapper .list-group {
@@ -189,4 +190,18 @@ img{ max-width:100%;}
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+.bg-black{
+  background-color : #22232A;
+}
+.border-right{
+  border-right: 1px solid #707070 !important;
+}
+.btn-yellow{
+  background-color: #FFCE48;
+  color:white;
+}
+#navbarDropdown{
+  color:white;
 }
