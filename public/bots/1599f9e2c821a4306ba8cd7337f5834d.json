@@ -1,0 +1,58 @@
+{
+    
+    "data": {
+        "name": "Météo",
+        "shortname": "meteo",
+        "description": "",
+        "image_url": "",
+        "ref": "1599f9e2c821a4306ba8cd7337f5834d"
+    },
+
+    "welcome_message": {
+        "enable": true,
+        "content": [
+            "Bienvenue sur le bot météo !"
+        ]
+    },
+
+    "welcome_back_message": {
+        "enable": true,
+        "content": [
+            "Welcome back !",
+            "Bon retour parmis nous !",
+            "Tient te revoilà"
+        ]
+    },
+
+    "commands": [
+        {
+            "request": "meteo help",
+            "response": [
+                {
+                    "mode": "text",
+                    "content": "Lorem Ipsum"
+                }
+            ]
+        }
+    ],
+
+    "automatism": [
+        {
+            "request": "[temps|meteo]",
+            "response": [
+                {
+                    "mode": "request",
+                    "request": "get_meteo",
+                    "launch_modal": [
+                        {
+                            "name": "localisation",
+                            "content": "Dans quelle ville voulez vous la météo ?",
+                            "response": "json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+}

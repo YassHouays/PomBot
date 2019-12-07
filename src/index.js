@@ -1,30 +1,20 @@
 import './index.scss';
-/** Class for say */
+import Cookies from 'js-cookie';
 
-class HelloWorld {
-  /**
-   * @constructor
-   * @param {String} param
-   */
-  constructor(param = 'Hello world') {
-    this.param = param;
-  }
 
-  /**
-   * @param {String} param
-   */
-  speak(param = this.param) {
-    const el = document.querySelector('#app');
-    const elH1 = document.createElement('h1');
-    const elH2 = document.createElement('h2');
+const Rendering = require('./model/Rendering.js');
 
-    elH1.textContent = param;
-    elH2.textContent = param;
-    el.appendChild(elH1);
-    el.appendChild(elH2);
-  }
+const rendering = new Rendering();
+
+if (Cookies.get('public_token') === undefined) {
+  // console.log('first launch');
+  Cookies.set('public_token', 'dc1b9a51', { expires: 7 });
+  // console.log(Cookies.get('public_token'));
+  rendering.firstLaunch('First Launch');
+} else {
+  Cookies.remove('public_token');
+  // console.log('Bot Interface');
+  // console.log(Cookies.get('public_token'));
+  rendering.firstLaunch('First Launch');
+  // rendering.botInterface('Bot Interface');
 }
-
-const helloWorld = new HelloWorld();
-helloWorld.speak();
-helloWorld.speak('Bonjour le monde');
