@@ -12,14 +12,14 @@
     <div class="d-flex" id="wrapper">
       <!-- Sidebar -->
       <div class="bg-black border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Usain Bot</div>
+        <div class="sidebar-heading text-color">Usain Bot</div>
         <div class="list-group list-group-flush">
             <div class="bot_list">
                 <a href="">
                   <div class="bot_info">
                   <div class="bot_img"> <img src="https://zupimages.net/up/19/45/8lo6.png" alt="sunil"> </div>
                   <div class="bot_text">
-                    <h5>Rap Genius<span class="bot_number">1</span></h5>
+                    <h5 class="text-color">Rap Genius<span class="bot_number">1</span></h5>
                     <p>Un sportif à toujours besoin de bonnes musiques à ses côtés</p>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                   <div class="bot_info">
                   <div class="bot_img"> <img src="https://zupimages.net/up/19/45/waaw.png" alt="sunil"> </div>
                   <div class="bot_text">
-                    <h5>Météo<span class="bot_number">2</span></h5>
+                    <h5 class="text-color">Météo<span class="bot_number">2</span></h5>
                     <p>Envie de courir ? Vérifiez quel temps il fera aujourd'hui !</p>
                   </div>
                 </div>
@@ -41,7 +41,7 @@
                   <div class="bot_info">
                   <div class="bot_img"> <img src="https://zupimages.net/up/19/45/8hux.png" alt="sunil"> </div>
                   <div class="bot_text">
-                    <h5>PopCorn<span class="bot_number">3</span></h5>
+                    <h5 class="text-color">PopCorn<span class="bot_number">3</span></h5>
                     <p>Après une bonne séance rien de mieux qu'un bon film pour se reposer.</p>
                   </div>
                 </div>
@@ -52,9 +52,9 @@
       <!-- /#sidebar-wrapper -->
   
       <!-- Page Content -->
-      <div id="page-content-wrapper">
+      <div id="page-content-wrapper" class="bg-black">
   
-        <nav class="navbar navbar-expand-lg navbar-light bg-black border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-black border-bot">
           <button class="btn btn-yellow" id="menu-toggle">Afficher les bots</button>
   
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,12 @@
   
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            
+                  <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+                </label>
+                </div>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown
@@ -73,16 +78,17 @@
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <div class="dropdown-divider"></div>
-                  <div class="custom-control custom-switch dropdown-item">
-                      <input type="checkbox" class="custom-control-input" id="customSwitches">
-                      <label class="custom-control-label" for="customSwitches">Mode sombre</label>
-                    </div>
+                 
                 </div>
                 
               </li>
             </ul>
           </div>
         </nav>
+        <nav>
+          
+        
+        </nav> 
   
         <div class="container-fluid">
             <div class="mesgs">
@@ -150,6 +156,28 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
       });
+      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+      const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+  }
+}
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
     </script>
   
   </body>
